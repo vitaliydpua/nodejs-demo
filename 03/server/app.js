@@ -1,6 +1,7 @@
 //npm i hbs --save - install engine Handlebars
 //npm i express-handlebars - for hbs layout
 
+require('dotenv').config()
 const config = require('./config')
 const express = require('express')
 const app = express()
@@ -22,7 +23,7 @@ app.use('/api/people', peopleRouter)
 app.use('/api/positions', positionsRouter)
 
 //подключение к БД
-mongoose.connect(config.dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
-app.listen(3000)
+app.listen(process.env.PORT)
