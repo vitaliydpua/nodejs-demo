@@ -1,0 +1,2 @@
+Войти в firebase panel и создать приложение.
+Создать Angular приложение и установить подключение с firebse realtime database
